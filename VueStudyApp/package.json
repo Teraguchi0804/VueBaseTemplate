@@ -10,7 +10,8 @@
   "dependencies": {
     "vue": "^2.6.6",
     "vue-router": "^3.0.1",
-    "vuex": "^3.0.1"
+    "vuex": "^3.0.1",
+    "vuex-router-sync": "^3.0.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.4.0",
@@ -18,24 +19,46 @@
     "@vue/cli-service": "^3.4.0",
     "@vue/eslint-config-standard": "^4.0.0",
     "babel-eslint": "^10.0.1",
+    "cpx": "^1.5.0",
     "eslint": "^5.8.0",
     "eslint-plugin-vue": "^5.0.0",
     "node-sass": "^4.9.0",
     "sass-loader": "^7.1.0",
+    "sass-resources-loader": "^2.0.0",
     "vue-template-compiler": "^2.5.21"
   },
   "eslintConfig": {
     "root": true,
     "env": {
-      "node": true
+      "node": true,
+      "browser": true,
+      "es6": true
     },
     "extends": [
-      "plugin:vue/essential",
+      "plugin:vue/base",
       "@vue/standard"
     ],
-    "rules": {},
+    "rules": {
+      "indent": [
+        "error",
+        4
+      ],
+      "linebreak-style": [
+        "error",
+        "unix"
+      ],
+      "quotes": [
+        "error",
+        "single"
+      ],
+      "semi": [
+        "error",
+        "always"
+      ]
+    },
     "parserOptions": {
-      "parser": "babel-eslint"
+      "parser": "babel-eslint",
+      "sourceType": "module"
     }
   },
   "postcss": {

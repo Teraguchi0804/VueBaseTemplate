@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <TestHeader></TestHeader>
     <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
@@ -8,7 +9,40 @@
   </div>
 </template>
 
+<script>
+import TestHeader from './components/TestHeader';
+
+export default {
+    components: {
+        TestHeader
+    },
+    // data () {
+    // return {
+    //   msg: 'Hello World!'
+    // }
+    // },
+    methods: {
+        // clear () {
+        //   this.msg = ''
+        // }
+      outputLog() {
+        window.console.log("HOGE_load");
+      }
+    },
+    mounted() {
+      window.addEventListener('load', function() {
+        this.outputLog();
+      }.bind(this));
+
+    },
+    destroyed() {
+
+    }
+};
+</script>
+
 <style lang="scss">
+  /*@import "./assets/style/import.scss";*/
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
